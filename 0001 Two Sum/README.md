@@ -59,6 +59,6 @@ You can return the answer in any order.
 **Returning the result:**
 
 - If a valid pair is found, returns the result immediately.
-- If no valid pair is found, returns the initialized result array.
+- If no valid pair is found, returns the initialized result array. 
 
-This algorithm has a time complexity of O(n^2) due to the nested loops, where n is the length of the input array.
+Time Complexity - This algorithm has a time complexity of O(n^2), due to the nested loops, where n is the length of the input array.
