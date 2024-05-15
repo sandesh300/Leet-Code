@@ -24,6 +24,9 @@ Explanation: In this case, no transactions are done and the max profit = 0.
 - 1 <= prices.length <= 10^5
 - 0 <= prices[i] <= 10^4
 
+## Approach used -
+max_profit = price[0] - buy 
+
 ## Problem Solution Explanation
 
 `maxProfit` method: This method takes an array of integer `prices` as input and returns an integer representing the maximum profit that can be achieved.
@@ -44,4 +47,4 @@ Explanation:
 - As we iterate through the `prices` array, we update `buy` if we find a lower price and update `max_profit` if selling at the current price gives us a higher profit.
 - At the end of the iteration, `max_profit` holds the maximum profit achievable by buying and selling the stock optimally.
 
-This approach only requires a single pass through the `prices` array, making it efficient with a time complexity of O(n), where n is the length of the `prices` array. It efficiently identifies the buying price and calculates the maximum profit in one go, hence the name "One Pass" approach.
+This approach only requires a single pass through the `prices` array, making it efficient with a time complexity of **O(n),** where n is the length of the `prices` array. It efficiently identifies the buying price and calculates the maximum profit in one go, hence the name "One Pass" approach.
