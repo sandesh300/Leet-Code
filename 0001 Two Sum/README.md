@@ -34,8 +34,7 @@ You can return the answer in any order.
 - Only one valid answer exists.
 
 ## Approach
-
-### - Add two indexes and equals to target
+### - Add two indexes and equals to target. nums[j] + nums[i] = target.
 
 ## Solution Explanation
 
