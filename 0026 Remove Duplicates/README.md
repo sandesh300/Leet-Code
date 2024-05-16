@@ -5,7 +5,10 @@
 
 Given an integer array `nums` sorted in non-decreasing order, remove the duplicates in-place such that each unique element appears only once. The relative order of the elements should be kept the same. Then return the number of unique elements in `nums`.
 
-### Approach
+### Approach - 
+- Two Pointer = if(nums[j] != nums[i]){ nums[++j] = nums[i]; }
+
+### Explanation
 
 The provided solution uses the Two Pointer technique. It initializes a pointer `j` to keep track of the position to place non-duplicate elements. Then it iterates through the array `nums` with another pointer `i`. For each element at index `i`, it checks if it's different from the element at index `j` (the last non-duplicate element found so far). If it's not a duplicate, it increments `j` and assigns the current element to the new position represented by `j`, effectively removing duplicates by overwriting them with non-duplicate elements. Finally, it returns the length of the new array, which is `++j`, indicating the count of unique elements in the array.
 
