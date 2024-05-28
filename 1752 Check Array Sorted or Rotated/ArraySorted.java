@@ -9,11 +9,10 @@ public class ArraySorted {
             if (nums[i] > nums[(i + 1) % nums.length]) {
                 count++;
             }
-        }
-
+        
         if (count > 1)
             return false;
+        }
         return true;
-
     }
 }
