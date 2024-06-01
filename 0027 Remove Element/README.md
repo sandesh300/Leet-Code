@@ -104,3 +104,8 @@ count = 2
 - The array up to index count (i.e., nums[0] to nums[1]) contains the elements [2, 2].
 
 Thus, the elements equal to val (which is 3) are removed, and the new length of the array is 2. The array is modified in place, and the relevant part up to the new length contains the elements [2, 2].
+
+### Summary
+### Time Complexity: O(m + n)
+### Space Complexity: O(1)
+### Approach: Use three pointers starting from the end of the arrays to merge nums1 and nums2 in-place.
