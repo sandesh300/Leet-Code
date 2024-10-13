@@ -1,33 +1,54 @@
 
-## 26. Remove Duplicates from Sorted Array
 
-### Problem Statement
+# 26. Remove Duplicates from Sorted Array
 
-Given an integer array `nums` sorted in non-decreasing order, remove the duplicates in-place such that each unique element appears only once. The relative order of the elements should be kept the same. Then return the number of unique elements in `nums`.
+## Problem Statement
 
-### Approach - 
-- Two Pointer = if(nums[j] != nums[i]){ nums[++j] = nums[i]; }
+Given an integer array `nums` sorted in non-decreasing order, remove the duplicates **in-place** such that each unique element appears only once. The relative order of the elements should be kept the same. Then return the number of unique elements in `nums`.
 
-### Explanation
+It does not matter what you leave beyond the returned `k` (hence they are underscores `_`).
 
-The provided solution uses the Two Pointer technique. It initializes a pointer `j` to keep track of the position to place non-duplicate elements. Then it iterates through the array `nums` with another pointer `i`. For each element at index `i`, it checks if it's different from the element at index `j` (the last non-duplicate element found so far). If it's not a duplicate, it increments `j` and assigns the current element to the new position represented by `j`, effectively removing duplicates by overwriting them with non-duplicate elements. Finally, it returns the length of the new array, which is `++j`, indicating the count of unique elements in the array.
+### Example 1:
 
-### Dry Run Example
+- **Input:** `nums = [1,1,2]`
+- **Output:** `2, nums = [1,2,_]`
+- **Explanation:** Your function should return `k = 2`, with the first two elements of `nums` being `1` and `2` respectively. It doesn't matter what is left beyond the returned `k`.
 
-Consider the example array `[1, 1, 2, 2, 3, 4, 4, 5]`:
+### Example 2:
 
-- Initially, `j` is 0.
-- As it goes through the array:
-  - It finds the first duplicate '1', skips it.
-  - Finds another '1', skips it.
-  - Finds '2' (which is not a duplicate), moves it to position 1 (`j` becomes 1).
-  - Continues with '2', '3', '4', '5'.
-- After the loop:
-  - `j` is at position 4.
-  - The new array is `[1, 2, 3, 4, 5, 4, 4, 5]`.
-- Returns `++j`, which is 5, indicating there are 5 unique elements in the array.
+- **Input:** `nums = [0,0,1,1,1,2,2,3,3,4]`
+- **Output:** `5, nums = [0,1,2,3,4,_,_,_,_,_]`
+- **Explanation:** Your function should return `k = 5`, with the first five elements of `nums` being `0, 1, 2, 3, and 4` respectively. It doesn't matter what is left beyond the returned `k`.
 
-### Complexity Analysis
+### Constraints:
 
-- Time complexity: O(n), where n is the length of the input array `nums`.
-- Space complexity: O(1), as the algorithm modifies the input array in-place without using any additional data structures.
+- `1 <= nums.length <= 30,000`
+- `-100 <= nums[i] <= 100`
+- `nums` is sorted in non-decreasing order.
+
+---
+
+## Approach: Two Pointers
+
+The problem can be efficiently solved using the **Two Pointers** technique. Here's the intuition:
+
+- We use two pointers: `i` and `j`. Pointer `i` will keep track of the last unique element in the array, while pointer `j` will traverse the array to find the next unique element.
+- Whenever a new unique element is found at `j`, we increment `i` and update `nums[i]` with the unique element found at `j`.
+
+### Algorithm Steps:
+
+1. Initialize a variable `i = 0`, which will point to the last unique element.
+2. Iterate over the array using pointer `j` from `1` to `nums.length - 1`.
+3. For each `j`, compare `nums[j]` with `nums[i]`:
+   - If `nums[j] != nums[i]`, increment `i` and assign `nums[i] = nums[j]`.
+4. After the loop completes, the first `i + 1` elements in the array will be unique.
+5. Return `i + 1` as the number of unique elements.
+
+---
+
+## Time and Space Complexity
+
+- **Time Complexity:** `O(n)`, where `n` is the number of elements in the array. We are traversing the array once, so the time complexity is linear.
+- **Space Complexity:** `O(1)`. We are modifying the array in-place, without using extra space for another data structure.
+
+
